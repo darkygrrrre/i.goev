@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Игорь Гоев — Project Manager / Руководитель проектов</title>
+<meta name="description" content="Руководитель проектов в digital-разработке. 4,5 года опыта, 17–25 проектов одновременно, команда 9 человек. Новосибирск.">
+<meta property="og:title" content="Игорь Гоев — Project Manager">
+<meta property="og:description" content="4,5 года в digital: highload-магазины, госсайты, команды. Новосибирск.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="photo-1.jpg">
+<link rel="icon" href="photo-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e16;
+    --bg2:#0d1220;
+    --card:rgba(255,255,255,.035);
+    --card-hover:rgba(255,255,255,.06);
+    --border:rgba(255,255,255,.09);
+    --text:#e7edf4;
+    --muted:#97a4b4;
+    --accent:#29d7f0;
+    --accent2:#8b9bff;
+    --radius:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    background:
+      radial-gradient(900px 500px at 85% -10%, rgba(41,215,240,.14), transparent 60%),
+      radial-gradient(800px 500px at -10% 20%, rgba(139,155,255,.12), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+  .num{font-family:'JetBrains Mono',monospace}
+
+  /* nav */
+  header{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(12px);
+    background:rgba(10,14,22,.7);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .nav .logo{font-weight:800;letter-spacing:.3px}
+  .nav .logo span{color:var(--accent)}
+  .nav nav{display:flex;gap:22px;font-size:14px;color:var(--muted)}
+  .nav nav a:hover{color:var(--text)}
+  @media(max-width:640px){.nav nav{display:none}}
+
+  section{padding:72px 0}
+  h2{font-size:30px;font-weight:800;letter-spacing:-.4px;margin-bottom:10px}
+  .lead{color:var(--muted);font-size:16px;max-width:640px}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:center;padding:64px 0 56px}
+  @media(max-width:860px){.hero{grid-template-columns:1fr;gap:34px}}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;color:var(--muted);
+    border:1px solid var(--border);border-radius:999px;padding:6px 14px;margin-bottom:22px;
+  }
+  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+  h1{
+    font-size:clamp(40px,6vw,62px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;
+    background:linear-gradient(100deg,#fff 20%,var(--accent) 60%,var(--accent2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .role{font-size:20px;color:var(--muted);font-weight:500;margin:10px 0 18px}
+  .hero p{font-size:17px;color:var(--text);max-width:560px;margin-bottom:28px}
+  .hero p b{color:#fff}
+  .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;
+    padding:13px 24px;border-radius:12px;transition:.2s;border:1px solid transparent;
+  }
+  .btn-primary{background:linear-gradient(100deg,var(--accent),var(--accent2));color:#04121a}
+  .btn-primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn-ghost{border-color:var(--border);color:var(--text)}
+  .btn-ghost:hover{background:var(--card-hover)}
+  .contacts{display:flex;gap:20px;flex-wrap:wrap;margin-top:26px;font-size:14px;color:var(--muted)}
+  .contacts a:hover{color:var(--accent)}
+  .contacts .sep{opacity:.4}
+
+  .photo-wrap{display:flex;justify-content:center}
+  .photo{
+    width:300px;height:300px;border-radius:50%;
+    padding:4px;
+    background:linear-gradient(140deg,var(--accent),var(--accent2));
+    box-shadow:0 20px 60px rgba(41,215,240,.18);
+  }
+  .photo img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;background:var(--bg2)}
+  @media(max-width:860px){.photo{width:220px;height:220px}}
+
+  /* stats */
+  .stats{
+    display:grid;grid-template-columns:repeat(6,1fr);gap:14px;
+    margin-top:8px;
+  }
+  @media(max-width:900px){.stats{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:520px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{
+    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+    padding:20px 16px;
+  }
+  .stat .v{font-size:26px;font-weight:800;color:#fff;letter-spacing:-.5px}
+  .stat .v em{font-style:normal;color:var(--accent)}
+  .stat .l{font-size:13px;color:var(--muted);margin-top:4px}
+
+  /* cards grid */
+  .grid{display:grid;gap:16px;margin-top:28px}
+  .grid.c2{grid-template-columns:repeat(2,1fr)}
+  .grid.c3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:860px){.grid.c2,.grid.c3{grid-template-columns:1fr}}
+  .card{
+    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+    padding:24px;transition:.2s;
+  }
+  .card:hover{background:var(--card-hover);border-color:rgba(255,255,255,.16)}
+  .card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15px}
+  .card .tag{color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+
+  /* skills */
+  .skill-group h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:10px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{
+    font-size:13.5px;color:var(--text);background:rgba(255,255,255,.05);
+    border:1px solid var(--border);border-radius:999px;padding:7px 14px;
+  }
+  .chip:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* case cards */
+  .case .res{margin-top:12px;font-size:14.5px;color:#d6f6ff;background:rgba(41,215,240,.07);border:1px solid rgba(41,215,240,.18);border-radius:10px;padding:10px 14px}
+  .case .res b{color:var(--accent)}
+
+  /* experience */
+  .exp{display:flex;gap:18px;align-items:flex-start}
+  .exp .years{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:14px;white-space:nowrap;padding-top:4px}
+  .exp h3{font-size:18px;font-weight:700}
+  .exp .co{color:var(--muted);font-size:14px;margin:2px 0 8px}
+  .exp ul{list-style:none}
+  .exp li{color:var(--muted);font-size:15px;padding-left:18px;position:relative;margin-bottom:6px}
+  .exp li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+  /* cta bottom */
+  .cta-bottom{
+    text-align:center;background:var(--card);border:1px solid var(--border);
+    border-radius:22px;padding:48px 28px;margin-bottom:40px;
+  }
+  .cta-bottom h2{margin-bottom:8px}
+  .cta-bottom p{color:var(--muted);margin-bottom:26px}
+  .cta-bottom .cta{justify-content:center}
+
+  footer{border-top:1px solid var(--border);padding:26px 0;font-size:13.5px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .js .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">Игорь <span>Гоев</span></div>
+    <nav>
+      <a href="#about">Обо мне</a>
+      <a href="#skills">Навыки</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#exp">Опыт</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:56px">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> Новосибирск · офис / гибрид</span>
+      <h1>Игорь Гоев</h1>
+      <div class="role">Project Manager / Руководитель проектов</div>
+      <p>4,5 года в digital-разработке. Веду одновременно <b>17–25 проектов</b>: от highload-интернет-магазинов до сайтов региональных правительств. Собираю требования, перевожу их в понятные задачи и довожу продукт до запуска.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://t.me/darkygrrrre" target="_blank" rel="noopener">✈ Написать в Telegram</a>
+        <a class="btn btn-ghost" href="resume.pdf" download>Скачать резюме</a>
+      </div>
+      <div class="contacts">
+        <a href="https://t.me/darkygrrrre" target="_blank" rel="noopener">Telegram: @darkygrrrre</a>
+        <span class="sep">·</span>
+        <a href="tel:+79234896631">+7 (923) 489-66-31</a>
+        <span class="sep">·</span>
+        <a href="https://novosibirsk.hh.ru/resume/f7176cd9ff107c6f9c0039ed1f6a52634b6153" target="_blank" rel="noopener">Резюме на hh</a>
+      </div>
+    </div>
+    <div class="photo-wrap reveal">
+      <div class="photo"><img src="photo-1.jpg" alt="Игорь Гоев"></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="reveal" style="padding-top:0">
+    <div class="stats">
+      <div class="stat"><div class="v num">4,5</div><div class="l">года в digital</div></div>
+      <div class="stat"><div class="v num">17–25</div><div class="l">проектов в ведении</div></div>
+      <div class="stat"><div class="v num">9</div><div class="l">человек в команде</div></div>
+      <div class="stat"><div class="v num"><em>95%</em></div><div class="l">SLA доступности</div></div>
+      <div class="stat"><div class="v num">150<em>k+</em></div><div class="l">SKU в магазине</div></div>
+      <div class="stat"><div class="v num">11<em> млн ₽</em></div><div class="l">портфель в год</div></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="reveal">
+    <h2>Обо мне</h2>
+    <p class="lead">Коротко: чем занимаюсь и что у меня получается лучше всего.</p>
+    <div class="grid c2" style="margin-top:26px">
+      <div class="card">
+        <div class="tag">Кто я</div>
+        <h3>Менеджер, который доводит до запуска</h3>
+        <p>Формализую требования заказчика, перевожу их в чёткие ТЗ для разработки, дизайна и QA — и слежу, чтобы сроки были предсказуемыми. С госзаказчиком говорю на языке регламентов, с командой — на языке задач.</p>
+      </div>
+      <div class="card">
+        <div class="tag">Что ищу</div>
+        <h3>Команду, где строят продукты</h3>
+        <p>Роль руководителя или менеджера проектов в digital или продуктовой IT. Офис в Новосибирске, полная занятость. К командировкам готов, к переезду — нет. Ценю прозрачные задачи и работу на результат, а не на активность.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="reveal">
+    <h2>Навыки</h2>
+    <p class="lead">То, чем пользуюсь каждый день.</p>
+    <div class="grid c3" style="margin-top:26px">
+      <div class="card skill-group">
+        <h3>Управление проектами</h3>
+        <div class="chips">
+          <span class="chip">Agile</span><span class="chip">Scrum</span><span class="chip">Kanban</span>
+          <span class="chip">Roadmap</span><span class="chip">Backlog</span><span class="chip">User Story</span>
+          <span class="chip">Разработка ТЗ</span><span class="chip">SLA</span>
+        </div>
+      </div>
+      <div class="card skill-group">
+        <h3>Команда и клиенты</h3>
+        <div class="chips">
+          <span class="chip">Управление до 9 человек</span><span class="chip">Постановка задач</span>
+          <span class="chip">Stakeholder Management</span><span class="chip">Account Management</span>
+          <span class="chip">Переговоры</span><span class="chip">Presale</span>
+        </div>
+      </div>
+      <div class="card skill-group">
+        <h3>Данные и инструменты</h3>
+        <div class="chips">
+          <span class="chip">SQL</span><span class="chip">Яндекс.Метрика</span><span class="chip">CJM</span>
+          <span class="chip">Юнит-экономика</span><span class="chip">Битрикс24</span><span class="chip">Figma</span>
+          <span class="chip">MS Excel</span><span class="chip">AI-инструменты</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASES -->
+  <section id="cases" class="reveal">
+    <h2>Кейсы</h2>
+    <p class="lead">Три проекта, которые показывают масштаб задач.</p>
+    <div class="grid c3" style="margin-top:26px">
+      <div class="card case">
+        <div class="tag">E-commerce</div>
+        <h3>Highload-интернет-магазин</h3>
+        <p>150 000+ товаров, ежедневный обмен с 1С и CRM, платёжные интеграции. Полный цикл от требований до запуска.</p>
+        <div class="res">Результат: скорость сайта <b>+25%</b>, синхронизация товаров <b>с 6 до 3 часов</b>.</div>
+      </div>
+      <div class="card case">
+        <div class="tag">Госсектор</div>
+        <h3>Сайт правительства ЯНАО</h3>
+        <p>yanao.ru — интеграция с ЕСИА, кастомная CMS для пресс-центра, RSS-лента для внешних площадок.</p>
+        <div class="res">Результат: полный цикл до запуска, соответствие требованиям информационной безопасности.</div>
+      </div>
+      <div class="card case">
+        <div class="tag">Продукт</div>
+        <h3>Платформа «Живём на Севере»</h3>
+        <p>Жители предлагают идеи и голосуют; победитель гарантированно реализуется властями. Маркетплейс, афиша по 12 МО, мобильное приложение.</p>
+        <div class="res">Результат: продукт запущен с нуля, полный цикл от требований.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="exp" class="reveal">
+    <h2>Опыт</h2>
+    <div class="card" style="margin-top:26px">
+      <div class="exp">
+        <div class="years">2022 — наст.</div>
+        <div>
+          <h3>Руководитель проектов</h3>
+          <div class="co">Мэйк · makeagency.ru · IT / системная интеграция</div>
+          <ul>
+            <li>Ведение 17–25 digital-проектов одновременно, из них 5 крупных.</li>
+            <li>Управление командой 9 специалистов: 4 разработчика, DevOps, дизайнер, QA, 2 менеджера.</li>
+            <li>SLA доступности ~95%; 92% тикетов с положительной или нейтральной оценкой клиента.</li>
+            <li>Портфель 11+ млн ₽ в год по поддержке и от 4 млн ₽ за разработку.</li>
+            <li>Работа с enterprise и госзаказчиками (yanao.ru, deltaleasing.ru, dom-a-dom.ru).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal" style="padding-top:30px">
+    <div class="cta-bottom">
+      <h2>Обсудим ваш проект?</h2>
+      <p>Отвечаю быстро. Пришлю резюме и пару кейсов — и договоримся о созвоне.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://t.me/darkygrrrre" target="_blank" rel="noopener">✈ Написать в Telegram</a>
+        <a class="btn btn-ghost" href="tel:+79234896631">+7 (923) 489-66-31</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div>© 2026 Игорь Гоев · Новосибирск</div>
+    <div><a href="https://t.me/darkygrrrre" target="_blank" rel="noopener">Telegram</a> · <a href="https://novosibirsk.hh.ru/resume/f7176cd9ff107c6f9c0039ed1f6a52634b6153" target="_blank" rel="noopener">hh.ru</a></div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('js');
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.12});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>
